@@ -1,0 +1,47 @@
+<template>
+      <lightning-card >
+<table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+  <thead>
+    <tr class="slds-line-height_reset">
+     
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Account Name">Account Name</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Billing State">Billing State</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Phone">Phone</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Type">Type</div>
+      </th>
+     
+    </tr>
+  </thead>
+  <tbody>
+      <template for:each={finalrecord} for:item="accdata">
+<tr key={accdata.id} >
+    <td>{accdata.Name}</td>
+    <td>{accdata.BillingState}</td>
+    <td>{accdata.Phone}</td>
+    <td>{accdata.Type}</td>
+</tr>
+      </template>
+  </tbody>
+</table>
+  <div slot="footer">
+      <div style="display:flex;flex-direction:row;justify-content: space-around;">
+           <lightning-button icon-name="utility:chevronleft" onclick={previousHandler} label="Previous" slot="actions"></lightning-button>
+
+                 <p>{currentpage}/{totalpage}</p>
+
+            <lightning-button  label="Next" icon-position="right" onclick={nextHandler} icon-name="utility:chevronright" slot="actions"></lightning-button>
+
+      </div>
+
+
+
+  </div>
+        </lightning-card>
+     </template>
